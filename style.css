@@ -1,0 +1,235 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
+
+:root{
+    --dk-grey: hsl(60, 2%, 23%); 
+    --lt-grey2: hsl(60, 3%, 38%);
+
+    --pl-white: hsl(0, 0%, 100%);
+
+    --vb-cyan: hsl(176, 100%, 44%); 
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+
+}
+
+.container{
+    max-width: 90%;
+    width: 450px;
+}
+
+h1{
+    color: var(--pl-white);
+    text-transform: uppercase;
+    opacity:0.75;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* show password */
+.display-container{
+    position: relative;
+    background-color: var(--dk-grey);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid var(--lt-grey2);
+    margin: 1rem 0;
+    padding: 0.35rem;
+}
+
+.display{
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    color: var(--pl-white);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+}
+
+.display::placeholder{
+    color: var(--pl-white);
+    opacity: 0.65;
+    
+}
+
+.display-container button{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.input-container{
+    width: 100%;
+    background-color: var(--dk-grey);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.35rem solid var(--lt-grey2);
+} 
+
+.copyBtn{
+    background: transparent;
+    border: none;
+    
+}
+
+.copiedMsg{
+    position: absolute;
+    color: var(--pl-white);
+    background-color:var(--lt-grey2);
+    top: -2.5rem;
+    left: -1.75rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.copiedMsg.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* length */
+
+.length-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1){
+    color: var(--pl-white);
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2){
+    color: var(--vb-cyan);
+    font-size: 1.5rem;
+}
+
+/* slider */
+
+.slider{
+    appearance: none;
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    height: 0.75rem;
+    /* background-color: var(--vb-violet);  */
+    /* if i use background color slider will always be colored 100% to adjust size we use background image */
+    background-image: linear-gradient(black, black);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    
+}
+
+.slider::-webkit-slider-thumb{
+    position: relative;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--pl-white);
+    box-shadow: 0px 0px 20px 0px rgba(225, 225, 225, 0.50);
+    transition: all 100ms ease-in;
+    
+}
+
+
+.slider:focus{
+    outline: 3px solid var(--pl-white);
+}
+
+.slider::-webkit-slider-thumb:hover{
+    background-color: var(--dk-grey);
+    outline: 2px solid black;
+}
+
+/* checkbox */
+
+.check{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+    color: var(--pl-white);
+    font-size: 1.25rem;
+}
+
+.check input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--pl-white);
+    border-radius: 1rem;
+    cursor: pointer;
+    
+}
+
+.check input:checked{
+    background-color: var(--pl-white);
+}
+
+.check input:checked::before{
+    content: "✓";
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* strength */
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--pl-white);
+}
+
+.strength-container div{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+
+}
+
+/* generate btn */
+.generateButton{
+    width: 100%;
+    color: var(--pl-white);
+    background-color: black;
+    border: none;
+    border-radius: 0.75rem;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-bottom: 0.35rem solid var(--pl-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
